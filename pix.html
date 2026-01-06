@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento Pix</title>
+    <style>
+        body { 
+            background-color: #0b0f1a; 
+            color: white; 
+            font-family: sans-serif; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0; 
+        }
+
+        .cartao { 
+            background: #161b2c; 
+            width: 350px; 
+            padding: 25px; 
+            border-radius: 20px; 
+            text-align: center; 
+            border: 1px solid #1e293b; 
+        }
+
+        .qr-fundo { 
+            background: white; 
+            padding: 10px; 
+            border-radius: 12px; 
+            margin: 15px 0;
+            display: inline-block;
+        }
+
+        .qr-fundo img { width: 200px; height: 200px; display: block; }
+
+        .chave-box { 
+            background: #0d1117; 
+            padding: 15px; 
+            border-radius: 12px; 
+            border: 1px solid #30363d; 
+            margin-bottom: 10px;
+        }
+
+        .chave-texto { 
+            display: block; 
+            color: #2ecc71; 
+            font-size: 18px; 
+            margin-bottom: 10px; 
+            font-weight: bold; 
+        }
+
+        .botao-pix { 
+            background: #2ecc71; 
+            color: #0b0f1a; 
+            border: none; 
+            width: 100%; 
+            padding: 12px; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            cursor: pointer; 
+        }
+
+        /* BOTÃO DISCORD */
+        .btn-discord { 
+            background-color: #5865F2; 
+            color: white; 
+            padding: 15px; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            display: block; 
+            margin-top: 15px;
+        }
+
+        .aviso-comprovante { 
+            color: #94a3b8; 
+            font-size: 13px; 
+            margin-top: 12px; 
+        }
+
+        #aviso-copiado { color: #2ecc71; font-size: 12px; margin-top: 5px; display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="cartao">
+        <h2 style="margin:0">Pagamento Pix</h2>
+        
+        <div class="qr-fundo">
+            <img src="pix.jpeg" alt="QR Code">
+        </div>
+
+        <div class="chave-box">
+            <span class="chave-texto" id="pix">79999514571</span>
+            <button class="botao-pix" onclick="copiar()">COPIAR CHAVE</button>
+            <div id="aviso-copiado">✓ Copiado!</div>
+        </div>
+
+        <a href="https://discord.gg/eN4Mej9d" target="_blank" class="btn-discord">
+            ENTRAR NO DISCORD
+        </a>
+
+        <p class="aviso-comprovante">
+            Depois da compra faça um ticket e mande o comprovante
+        </p>
+    </div>
+
+    <script>
+        function copiar() {
+            const t = document.getElementById('pix').innerText;
+            navigator.clipboard.writeText(t);
+            document.getElementById('aviso-copiado').style.display = 'block';
+            setTimeout(() => { document.getElementById('aviso-copiado').style.display = 'none'; }, 2000);
+        }
+    </script>
+
+</body>
+</html>

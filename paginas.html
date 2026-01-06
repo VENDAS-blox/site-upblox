@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel do Usuário</title>
+
+    <style>
+        body {
+            background-image: url('foto.2.jpeg'), url('foto.2.jpeg'), url('foto.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: #000;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: white;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-item {
+            color: #aaa;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            color: #00aaff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .aba-conteudo {
+            display: none;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            min-height: 300px;
+        }
+
+        .aba-conteudo.ativa {
+            display: block;
+        }
+
+        h2 {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 40px;
+            margin-top: 0;
+            color: #00aaff;
+        }
+
+        #loja {
+            background: rgba(40, 40, 40, 0.85);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        hr {
+            border: 1px solid rgba(255,255,255,0.15);
+            margin: 30px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 8px 0;
+            font-size: 15px;
+        }
+
+        .btn-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #7289da;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Botão de compra */
+        .btn-comprar {
+            display: inline-block;
+            margin-left: 10px;
+            padding: 5px 12px;
+            background-color: #28a745; /* verde */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.2s;
+            font-size: 13px;
+        }
+
+        .btn-comprar:hover {
+            background-color: #1e7e34; /* verde mais escuro */
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a class="nav-item active" onclick="abrirAba(event, 'biblioteca')">Biblioteca</a>
+    <a class="nav-item" onclick="abrirAba(event, 'loja')">Loja</a>
+    <a class="nav-item" onclick="abrirAba(event, 'discord')">Discord</a>
+    <a class="nav-item" onclick="abrirAba(event, 'vincular')">Vincular Discord</a>
+</nav>
+
+<div class="container">
+
+    <div id="biblioteca" class="aba-conteudo ativa">
+        <h2>Sua Biblioteca</h2>
+        <p>Você não tem nenhuma compra.</p>
+    </div>
+
+    <div id="loja" class="aba-conteudo">
+        <h2>Lista de Preços</h2>
+
+        <h3 style="color:#00aaff;">⚔️ Espadas</h3>
+        <ul>
+            <li>YAMA -------------------------- R$ 4,99 ---------------- <a href="pix.html" class="btn-comprar">COMPRAR</a></li>
+            <li>TUSHITA ----------------------- R$ 8,49 ---------------- <a href="pix.html" class="btn-comprar">COMPRAR</a></li>
+            <li>SHARK ANCHOR ------------------ R$ 11,90 --------------- <a href="pix.html" class="btn-comprar">COMPRAR</a></li>
+            <li>CDK INTEIRA ------------------- R$ 14,99 --------------- <a href="pix.html" class="btn-comprar">COMPRAR</a></li>
+            <li>FOX LAMP ---------------------- R$ 9,00 ---------------- <a href="pix.html" class="btn-comprar">COMPRAR</a></li>
+        </ul>
+
+        <hr>
+
+        <h3 style="color:#00aaff;">🥋 Estilos de Luta</h3>
+        <ul>
+            <li>DARK STEP V2 --------------- R$ 4,49 ---------------- <a href="pix.html" class="btn-comprar">COMPRAR</a></li>
+            <li>AQUÁTICO V2 ---------------- R$ 8,99 ---------------- <a href="pix.html" class="btn-comprar">COMPRAR</a></li>
+            <li>ELECTRIC CLAW -------------- R$ 5,90 ---------------- <a href="pix.html" class="btn-comprar">COMPRAR</a></li>
+            <li>DRAGON TALON --------------- R$ 9,90 ---------------- <a href="pix.html" class="btn-comprar">COMPRAR</a></li>
+            <li>SUPER HUMAN ---------------- R$ 4,49 ---------------- <a href="pix.html" class="btn-comprar">COMPRAR</a></li>
+            <li>GOD HUMAN ------------------ R$ 19,90 --------------- <a href="pix.html" class="btn-comprar">COMPRAR</a></li>
+        </ul>
+
+        <hr>
+
+        <h3 style="color:#00aaff;">🗡️ Armas</h3>
+        <ul>
+            <li>SKULL GUITAR ------------------------ R$ 9,99 ------------------------ <a href="pix.html" class="btn-comprar">COMPRAR</a></li>
+            <li>TEMPESTADE DO DRAGÃO --------------- R$ 29,90 ------------------------ <a href="pix.html" class="btn-comprar">COMPRAR</a></li>
+        </ul>
+
+        <hr>
+
+        <h3 style="color:#00aaff;">👤 Contas</h3>
+        <ul>
+            <li>PRIMEIRA CONTA ----------------------- R$ 7,00 ----------------- <a href="pix.html" class="btn-comprar">COMPRAR</a></li>
+            <li>SEGUNDA CONTA ------------------------ R$ 9,00 ----------------- <a href="pix.html" class="btn-comprar">COMPRAR</a></li>
+        </ul>
+    </div>
+
+    <div id="discord" class="aba-conteudo">
+        <h2>Nosso Discord</h2>
+        <a href="https://discord.gg/fS9UgVkX" target="_blank" class="btn-link">
+            Entrar no Servidor
+        </a>
+    </div>
+
+    <div id="vincular" class="aba-conteudo">
+        <h2>Vincular Discord</h2>
+        <p>Função será adicionada depois.</p>
+        <div style="color:#aaa;">Status: Desconectado</div>
+    </div>
+
+</div>
+
+<script>
+function abrirAba(event, nomeAba) {
+    let abas = document.getElementsByClassName("aba-conteudo");
+    let links = document.getElementsByClassName("nav-item");
+
+    for (let i = 0; i < abas.length; i++) {
+        abas[i].classList.remove("ativa");
+    }
+
+    for (let i = 0; i < links.length; i++) {
+        links[i].classList.remove("active");
+    }
+
+    document.getElementById(nomeAba).classList.add("ativa");
+    event.currentTarget.classList.add("active");
+}
+</script>
+
+</body>
+</html>
